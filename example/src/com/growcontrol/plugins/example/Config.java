@@ -1,10 +1,12 @@
-package com.growcontrol.example;
+package com.growcontrol.plugins.example;
 
-import com.growcontrol.gcCommon.pxnConfig.pxnConfig;
-import com.growcontrol.gcCommon.pxnConfig.pxnConfigLoader;
 
 
 public final class Config {
+
+
+
+/*
 	private Config() {}
 	@Override
 	public Object clone() throws CloneNotSupportedException {
@@ -67,6 +69,8 @@ public final class Config {
 		if(config == null) return null;
 		return config.getString("Nick");
 	}
+*/
+
 
 
 }

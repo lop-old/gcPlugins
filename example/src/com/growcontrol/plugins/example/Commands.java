@@ -1,12 +1,13 @@
-package com.growcontrol.example;
-
-import com.growcontrol.gcCommon.pxnCommand.pxnCommandEvent;
-import com.growcontrol.gcCommon.pxnCommand.pxnCommandsHolder;
-import com.growcontrol.gcCommon.pxnLogger.pxnLog;
+package com.growcontrol.plugins.example;
 
 
-public class Commands extends pxnCommandsHolder {
 
+public class Commands {
+//public class Commands extends pxnCommandsHolder {
+
+
+
+/*
 	private static volatile Commands instance = null;
 	private static final Object lock = new Object();
 
@@ -35,6 +36,8 @@ public class Commands extends pxnCommandsHolder {
 		pxnLog.get().Publish("Example command has run");
 		return true;
 	}
+*/
+
 
 
 }
