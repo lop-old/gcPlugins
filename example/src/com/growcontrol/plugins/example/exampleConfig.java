@@ -2,7 +2,7 @@ package com.growcontrol.plugins.example;
 
 
 
-public final class Config {
+public final class exampleConfig {
 
 
 

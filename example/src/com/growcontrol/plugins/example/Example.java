@@ -1,36 +1,28 @@
 package com.growcontrol.plugins.example;
 
-import com.growcontrol.gccommon.plugins.gcServerPlugin;
-import com.poixson.commonapp.plugin.xPluginManager;
-import com.poixson.commonapp.plugin.xPluginYML;
+import com.growcontrol.server.plugins.gcServerPlugin;
 
 
 public class Example extends gcServerPlugin {
 
 
 
-	public Example(xPluginManager manager, xPluginYML yml) {
-		super(manager, yml);
-	}
-
-
-
 	// load/unload plugin
 	@Override
 	public void onEnable() {
-/*
+		this.log().info("Example plugin enabled!");
 		// register listeners
-		register(Commands.get());
-		// load configs
-		Config.get("plugins/"+getName()+"/");
-		if(!Config.isLoaded()) {
-			getLogger().severe("Failed to load "+Config.CONFIG_FILE);
-			return;
-		}
-*/
+		this.register(new exampleCommands());
+//		// load configs
+//		Config.get("plugins/"+getName()+"/");
+//		if(!Config.isLoaded()) {
+//			getLogger().severe("Failed to load "+Config.CONFIG_FILE);
+//			return;
+//		}
 	}
 	@Override
 	public void onDisable() {
+		this.log().info("Example plugin disabled!");
 	}
 
 
