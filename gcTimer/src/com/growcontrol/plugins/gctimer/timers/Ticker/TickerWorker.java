@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.gctimer.timers;
 
 import java.util.ArrayList;
@@ -101,3 +102,4 @@ public class timerTicker extends gcServerDeviceBoolean implements deviceTimer {
 
 
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.gctimer.timers;
 
 
@@ -10,3 +11,4 @@ public interface TimerTrigger {
 	public boolean TestSpan();
 
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.arduinogc.interfaces;
 
 import java.util.HashMap;
@@ -90,3 +91,4 @@ ArduinoGC.log.severe("mode "+Integer.toString(pinNum)+" "+pinMode.toString());
 
 
 }
+*/

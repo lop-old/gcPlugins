@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.arduinogc;
 
 import com.growcontrol.gcCommon.pxnConfig.pxnConfig;
@@ -57,3 +58,4 @@ public final class Config {
 
 
 }
+*/

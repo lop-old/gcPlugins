@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.plugins.example;
 
 
@@ -6,7 +7,6 @@ public final class exampleConfig {
 
 
 
-/*
 	private Config() {}
 	@Override
 	public Object clone() throws CloneNotSupportedException {
@@ -69,8 +69,8 @@ public final class exampleConfig {
 		if(config == null) return null;
 		return config.getString("Nick");
 	}
-*/
 
 
 
 }
+*/

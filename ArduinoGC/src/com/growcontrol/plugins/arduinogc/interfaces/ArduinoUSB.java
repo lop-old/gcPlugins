@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.arduinogc.interfaces;
 
 import gnu.io.CommPort;
@@ -291,3 +292,4 @@ boolean b = true;if(b)return false;
 
 
 }
+*/

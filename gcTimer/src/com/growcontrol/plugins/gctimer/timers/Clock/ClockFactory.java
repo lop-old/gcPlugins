@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.gctimer.timers.Clock;
 
 import com.growcontrol.gctimer.timers.TimerFactory;
@@ -14,3 +15,4 @@ public final class ClockFactory implements TimerFactory {
 
 
 }
+*/

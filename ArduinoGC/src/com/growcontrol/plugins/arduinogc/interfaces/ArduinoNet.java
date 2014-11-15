@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.arduinogc.interfaces;
 
 import java.io.IOException;
@@ -179,3 +180,4 @@ public class ArduinoNet extends ArduinoInterface {
 
 
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.gctimer.timers.Ticker;
 
 import com.growcontrol.gctimer.config.TimerDAO;
@@ -15,3 +16,4 @@ public final class TickerFactory implements TimerFactory {
 
 
 }
+*/

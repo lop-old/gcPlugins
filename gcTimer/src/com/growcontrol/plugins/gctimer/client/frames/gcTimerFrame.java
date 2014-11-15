@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.gctimer.client.frames;
 
 import javax.swing.JButton;
@@ -17,3 +18,4 @@ public class gcTimerFrame extends gcPluginFrame {
 
 
 }
+*/

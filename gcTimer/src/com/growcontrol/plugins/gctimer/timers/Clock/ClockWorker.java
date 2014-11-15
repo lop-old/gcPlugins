@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.gctimer.timers.Clock;
 
 import com.growcontrol.gctimer.timers.TimerWorker;
@@ -18,3 +19,4 @@ public class ClockWorker extends TimerWorker {
 
 
 }
+*/

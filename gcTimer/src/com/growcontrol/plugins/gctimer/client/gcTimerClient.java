@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.gctimer.client;
 
 import com.growcontrol.gcClient.clientPlugin.gcClientPlugin;
@@ -26,3 +27,4 @@ public class gcTimerClient extends gcClientPlugin {
 
 
 }
+*/

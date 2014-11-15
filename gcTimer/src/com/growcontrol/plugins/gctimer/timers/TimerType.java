@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.gctimer.timers;
 
 import java.util.ArrayList;
@@ -88,3 +89,4 @@ public final class TimerType implements java.io.Serializable {
 
 
 }
+*/

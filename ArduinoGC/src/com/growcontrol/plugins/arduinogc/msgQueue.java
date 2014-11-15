@@ -1,3 +1,4 @@
+/*
 package com.growcontrol.arduinogc;
 
 import java.util.HashMap;
@@ -104,3 +105,4 @@ ArduinoGC.log.severe("Sending message: "+msgOutput);
 
 
 }
+*/
