@@ -1,6 +1,6 @@
-package com.growcontrol.gcirc;
+package com.growcontrol.plugins.ircbot;
 
-import com.growcontrol.gcServer.serverPlugin.gcServerPlugin;
+import com.growcontrol.server.plugins.gcServerPlugin;
 
 
 public class gcIRC extends gcServerPlugin {
@@ -8,17 +8,18 @@ public class gcIRC extends gcServerPlugin {
 //	private AutoReconnect autoConnect = null;
 
 
+
 	// load/unload plugin
 	@Override
 	public void onEnable() {
 		// register listeners
-		register(Commands.get());
-		// load configs
-		Config.get("plugins/"+getName()+"/");
-		if(!Config.isLoaded()) {
-			getLogger().severe("Failed to load "+Config.CONFIG_FILE);
-			return;
-		}
+		register(new ircCommands());
+//		// load configs
+//		Config.get("plugins/"+getName()+"/");
+//		if(!Config.isLoaded()) {
+//			getLogger().severe("Failed to load "+Config.CONFIG_FILE);
+//			return;
+//		}
 //		String key = null;
 //		this.getLogger().info("Connecting to: "+Config.Host());
 //		ClientState state = new ClientState();
@@ -38,6 +39,7 @@ public class gcIRC extends gcServerPlugin {
 	@Override
 	public void onDisable() {
 	}
+
 
 
 }

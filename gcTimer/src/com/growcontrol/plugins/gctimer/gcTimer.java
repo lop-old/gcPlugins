@@ -1,35 +1,37 @@
-package com.growcontrol.gctimer;
+package com.growcontrol.plugins.gctimer;
 
-import com.growcontrol.gcServer.serverPlugin.gcServerPlugin;
+import com.growcontrol.server.plugins.gcServerPlugin;
 
 
 public class gcTimer extends gcServerPlugin {
 
-	// commands listener
-	private static volatile Commands commands = null;
+//	// commands listener
+//	private static volatile Commands commands = null;
 //	private DeviceListener deviceListener = new DeviceListener();
 
 	// timer types
-	public static enum Type {CLOCK, TICKER, SEQUENCER};
+//	public static enum Type {CLOCK, TICKER, SEQUENCER};
 //	// timer instances
 //	private static HashMap<String, deviceTimer> timersMap = new HashMap<String, deviceTimer>();
+
 
 
 	// load/unload plugin
 	@Override
 	public void onEnable() {
 		// register listeners
-		if(commands == null)
-			commands = new Commands();
-		register(commands);
+		this.register(new timerCommands());
+//		if(commands == null)
+//			commands = new Commands();
+//		register(commands);
 //		registerListenerTick(this);
 //		registerListenerDevice(deviceListener);
-		// load configs
-		Config.get("plugins/"+getName()+"/");
-		if(!Config.isLoaded()) {
-			getLogger().severe("Failed to load "+Config.CONFIG_FILE);
-			return;
-		}
+//		// load configs
+//		Config.get("plugins/"+getName()+"/");
+//		if(!Config.isLoaded()) {
+//			getLogger().severe("Failed to load "+Config.CONFIG_FILE);
+//			return;
+//		}
 //		// load timers
 //		LoadTimers();
 //		// register timer devices
@@ -43,6 +45,7 @@ public class gcTimer extends gcServerPlugin {
 	}
 
 
+
 //	// load timers
 //	private void LoadTimers() {
 //		for(TimerDAO timer : Config.Timers()) {
@@ -52,6 +55,7 @@ public class gcTimer extends gcServerPlugin {
 //	private void UnloadTimers() {
 //		//TODO:
 //	}
+
 
 
 //	// timer type
@@ -81,6 +85,7 @@ public class gcTimer extends gcServerPlugin {
 //	}
 
 
+
 //		// load output commands
 //		List<String> outputCommands = config.getStringList("Outputs");
 //		timer.addOutputCommands(outputCommands);
@@ -89,6 +94,7 @@ public class gcTimer extends gcServerPlugin {
 //		// start the timer!
 //		((gcServerDevice) timer).StartDevice(runMode);
 //	}
+
 
 
 //	// create new timer
@@ -119,6 +125,7 @@ public class gcTimer extends gcServerPlugin {
 //	}
 
 
+
 //	// tick all timer devices
 //	@Override
 //	public void onTick() {
@@ -126,6 +133,7 @@ public class gcTimer extends gcServerPlugin {
 //			if(timer != null)
 //				timer.onTick();
 //	}
+
 
 
 }

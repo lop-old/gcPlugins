@@ -1,6 +1,6 @@
-package com.growcontrol.arduinogc;
+package com.growcontrol.plugins.arduinogc;
 
-import com.growcontrol.gcServer.serverPlugin.gcServerPlugin;
+import com.growcontrol.server.plugins.gcServerPlugin;
 
 
 //implements gcServerListenerOutput
@@ -10,17 +10,18 @@ public class ArduinoGC extends gcServerPlugin {
 //	protected static HashMap<String, ArduinoInterface> controllers = new HashMap<String, ArduinoInterface>();
 
 
+
 	@Override
 	public void onEnable() {
 		// register listeners
-		register(Commands.get());
+		register(new arduinoCommands());
 //		registerListenerOutput(this);
 		// load configs
-		Config.get("plugins/"+getName()+"/");
-		if(!Config.isLoaded()) {
-			getLogger().severe("Failed to load "+Config.CONFIG_FILE);
-			return;
-		}
+//		Config.get("plugins/"+getName()+"/");
+//		if(!Config.isLoaded()) {
+//			getLogger().severe("Failed to load "+Config.CONFIG_FILE);
+//			return;
+//		}
 	}
 	@Override
 	public void onDisable() {
@@ -28,6 +29,7 @@ public class ArduinoGC extends gcServerPlugin {
 //			controller.StopInterface();
 //		getLogger().info("ArduinoGC disabled!");
 	}
+
 
 
 //	// load arduino configs
@@ -68,6 +70,7 @@ public class ArduinoGC extends gcServerPlugin {
 //	}
 
 
+
 //	// create new controller
 //	public static ArduinoInterface newController(pxnConfig config, String name, String title, String type) {
 //		return newController(config, name, title, ArduinoInterface.controllerTypeFromString(type));
@@ -96,6 +99,7 @@ public class ArduinoGC extends gcServerPlugin {
 //	}
 
 
+
 //	@Override
 //	public boolean onOutput(String[] args) {
 //		if(!controllersMap.containsKey(args[0])) return false;
@@ -122,6 +126,7 @@ public class ArduinoGC extends gcServerPlugin {
 //		controller.sendPinState(pinNum, pinState);
 //		return true;
 //	}
+
 
 
 }
