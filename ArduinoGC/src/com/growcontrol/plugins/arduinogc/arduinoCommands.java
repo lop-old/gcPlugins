@@ -1,43 +1,27 @@
-package com.growcontrol.arduinogc;
+package com.growcontrol.plugins.arduinogc;
 
-import com.growcontrol.gcCommon.pxnCommand.pxnCommandEvent;
-import com.growcontrol.gcCommon.pxnCommand.pxnCommandsHolder;
-
-
-public class Commands extends pxnCommandsHolder {
-
-	private static volatile Commands instance = null;
-	private static final Object lock = new Object();
+import com.poixson.commonapp.app.xApp;
+import com.poixson.commonjava.EventListener.xEvent;
+import com.poixson.commonjava.EventListener.xEvent.Priority;
+import com.poixson.commonjava.xLogger.xLog;
+import com.poixson.commonjava.xLogger.handlers.xCommandEvent;
+import com.poixson.commonjava.xLogger.handlers.xCommandListener;
 
 
-	public static Commands get() {
-		if(instance == null) {
-			synchronized(lock) {
-				if(instance == null)
-					instance = new Commands();
-			}
-		}
-		return instance;
-	}
-	@Override
-	protected void initCommands() {
-//		setPriority(EventPriority.NORMAL);
-		// register commands
-		addCommand("arduinogc")
-			.addAlias("arduino")
-			.setUsage("");
-	}
+public class arduinoCommands implements xCommandListener {
+
 
 
 	@Override
-	public boolean onCommand(pxnCommandEvent event) {
-return false;
-//		if(event.isHandled())   return false;
-//		if(!event.hasCommand()) return false;
-//		pxnCommand command = event.getCommand();
+	@xEvent(
+			priority=Priority.NORMAL,
+			threaded=false,
+			filterHandled=true,
+			filterCancelled=true)
+	public void onCommand(xCommandEvent event) {
 //ArduinoGC.log.severe("ARDUINO Command: "+command.toString());
-//		return true;
 	}
+
 
 
 //		// set output
@@ -67,6 +51,23 @@ return false;
 //			return true;
 //		}
 //		return false;
+
+
+
+	// logger
+	private volatile xLog _log = null;
+	public xLog log() {
+		if(this._log == null)
+			this._log = xApp.log();
+		return this._log;
+	}
+	public void publish(final String msg) {
+		this.log().publish(msg);
+	}
+	public void publish() {
+		this.log().publish();
+	}
+
 
 
 }

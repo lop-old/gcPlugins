@@ -8,7 +8,6 @@ import com.poixson.commonjava.xLogger.handlers.xCommandEvent;
 import com.poixson.commonjava.xLogger.handlers.xCommandListener;
 
 
-
 public class exampleCommands implements xCommandListener {
 
 

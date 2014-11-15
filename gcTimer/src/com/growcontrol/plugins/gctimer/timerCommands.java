@@ -1,45 +1,26 @@
-package com.growcontrol.gctimer;
+package com.growcontrol.plugins.gctimer;
 
-import com.growcontrol.gcCommon.pxnCommand.pxnCommandEvent;
-import com.growcontrol.gcCommon.pxnCommand.pxnCommandsHolder;
-
-
-public final class Commands extends pxnCommandsHolder {
-
-	private static volatile Commands instance = null;
-	private static final Object lock = new Object();
+import com.poixson.commonjava.EventListener.xEvent;
+import com.poixson.commonjava.EventListener.xEvent.Priority;
+import com.poixson.commonjava.xLogger.handlers.xCommandEvent;
+import com.poixson.commonjava.xLogger.handlers.xCommandListener;
 
 
-	public static Commands get() {
-		if(instance == null) {
-			synchronized(lock) {
-				if(instance == null)
-					instance = new Commands();
-			}
+public final class timerCommands implements xCommandListener {
+
+
+
+	@Override
+	@xEvent(
+			priority=Priority.NORMAL,
+			threaded=false,
+			filterHandled=true,
+			filterCancelled=true)
+	public void onCommand(xCommandEvent event) {
+		switch(event.arg(0)) {
 		}
-		return instance;
-	}
-	@Override
-	protected void initCommands() {
-//		setPriority(EventPriority.NORMAL);
-		// register commands
-		addCommand("timer")
-			.setUsage("");
-	}
-
-
-	@Override
-	public boolean onCommand(pxnCommandEvent event) {
-return false;
-//		if(event.isHandled())   return false;
-//		if(!event.hasCommand()) return false;
-//		pxnCommand command = event.getCommand();
 //gcTimer.log.severe("gcTimer Command: "+command.toString());
-//		return true;
-//		pxnCommand command = event.getCommand();
-//		String[] args = event.getArgs();
 //		gcTimer.log.severe("PLUGIN COMMAND!!! "+command.toString());
-//		return true;
 //		// set output
 //		if(command.equalsIgnoreCase("set")) {
 //			if(numArgs < 3) return false;
@@ -67,6 +48,7 @@ return false;
 //			return true;
 //		}
 	}
+
 
 
 }
