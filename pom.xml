@@ -6,7 +6,7 @@
 	<name>GrowControl-General-Plugins</name>
 	<groupId>com.growcontrol.plugins</groupId>
 	<artifactId>gc-plugins</artifactId>
-	<version>3.4.x-SNAPSHOT</version>
+	<version>3.5.x-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

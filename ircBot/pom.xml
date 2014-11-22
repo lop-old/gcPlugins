@@ -6,7 +6,7 @@
 	<groupId>com.growcontrol.plugins</groupId>
 	<artifactId>ircBot</artifactId>
 	<packaging>jar</packaging>
-	<version>3.4.x-SNAPSHOT</version>
+	<version>3.5.x-SNAPSHOT</version>
 	<name>ircBot-Plugin</name>
 	<url>http://growcontrol.com</url>
 	<properties>
@@ -68,7 +68,7 @@
 		<dependency>
 			<groupId>com.growcontrol</groupId>
 			<artifactId>gcServer</artifactId>
-			<version>[3.4,3.5]</version>
+			<version>[3.5,3.6]</version>
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>
