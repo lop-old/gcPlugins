@@ -1,7 +1,7 @@
 Plugin Name: gcTimer
 Plugin Version: 1.0.3
-Server Main: com.growcontrol.gctimer.gcTimer.class
-Client Main: com.growcontrol.gctimer.client.gcTimerClient.class
+Server Main: com.growcontrol.plugins.gctimer.gcTimer.class
+Client Main: com.growcontrol.plugins.gctimer.client.gcTimerClient.class
 Author: lorenzop
 Website: http://www.growcontrol.com/
 Depend: []
