@@ -1,0 +1,9 @@
+Plugin Name: SerialControl
+Plugin Version: 1.5.0
+Server Main: com.growcontrol.plugins.serialcontrol.SerialControl.class
+Client Main: com.growcontrol.plugins.serialcontrol.gui.SerialControl.class
+Author: lorenzop
+Website: http://www.growcontrol.com/
+Depend: []
+SoftDepend: []
+Requires: [ 'gnu.io.CommPortIdentifier' ]
