@@ -7,10 +7,10 @@
 	</formats>
 	<fileSets>
 		<fileSet>
-			<directory>${project.basedir}/ArduinoGC/target/</directory>
+			<directory>${project.basedir}/SerialControl/target/</directory>
 			<outputDirectory>/</outputDirectory>
 			<includes>
-				<include>ArduinoGC-*.jar</include>
+				<include>SerialControl-*.jar</include>
 			</includes>
 		</fileSet>
 		<fileSet>
@@ -29,4 +29,3 @@
 		</fileSet>
 	</fileSets>
 </assembly>
-
