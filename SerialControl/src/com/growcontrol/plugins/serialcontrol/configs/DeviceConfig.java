@@ -1,9 +1,13 @@
 package com.growcontrol.plugins.serialcontrol.configs;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
+import com.growcontrol.gccommon.meta.MetaAddress;
 import com.growcontrol.plugins.serialcontrol.SerialControl;
 import com.poixson.commonapp.config.xConfig;
+import com.poixson.commonjava.Utils.utils;
 
 
 /**
@@ -25,6 +29,7 @@ import com.poixson.commonapp.config.xConfig;
 public final class DeviceConfig extends xConfig {
 
 	private volatile SerialControl plugin = null;
+	private final Map<String, MetaAddress> addresses = new HashMap<String, MetaAddress>();
 
 	public static enum METHOD {RS232, TCP}
 	public final METHOD method;
@@ -61,6 +66,27 @@ public final class DeviceConfig extends xConfig {
 	}
 	public void init(final SerialControl plugin) {
 		this.plugin = plugin;
+		// load address hashes
+		{
+			final Map<String, Object> addrMap = this.getStringObjectMap("Addresses");
+			for(final Entry<String, Object> entry : addrMap.entrySet()) {
+				final String hash = entry.getKey();
+				final MetaAddress addr = MetaAddress.get(hash);
+				// tags
+				final Map<String, String> tagMap = this.getStringMap("Addresses."+hash);
+				if(utils.notEmpty(tagMap)) {
+					for(final Entry<String, String> ent : tagMap.entrySet()) {
+						try {
+							addr.setTag(ent.getKey(), ent.getValue());
+						} catch (Exception ignore) {}
+					}
+				}
+				this.addresses.put(
+					hash,
+					addr
+				);
+			}
+		}
 	}
 
 
