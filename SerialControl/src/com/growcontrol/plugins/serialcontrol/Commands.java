@@ -22,8 +22,8 @@ public class Commands implements xCommandListener {
 		if( !"serialcontrol".equalsIgnoreCase(event.arg(0)) )
 			return;
 		switch(event.arg(1)) {
-		case "set":
-			this._set(event);
+//		case "set":
+//			this._set(event);
 		}
 	}
 
@@ -59,23 +59,23 @@ public class Commands implements xCommandListener {
 
 
 
-	protected void _set(final xCommandEvent event) {
-		if(event.isHelp()) {
-			this._set_help(event);
-			return;
-		}
-		event.setHandled();
-		// parse command arguments
-		for(final String arg : event.args)
-			this.log().severe("ARG: "+arg);
+//	protected void _set(final xCommandEvent event) {
+//		if(event.isHelp()) {
+//			this._set_help(event);
+//			return;
+//		}
+//		event.setHandled();
+//		// parse command arguments
+//		for(final String arg : event.args)
+//			this.log().severe("ARG: "+arg);
 //		this.log().severe("ARG: "+event.arg(1));
-	}
-	protected void _set_help(final xCommandEvent event) {
-		event.setHandled();
-		this.publish();
-		this.publish("Sets the state of a pin.");
-		this.publish();
-	}
+//	}
+//	protected void _set_help(final xCommandEvent event) {
+//		event.setHandled();
+//		this.publish();
+//		this.publish("Sets the state of a pin.");
+//		this.publish();
+//	}
 
 
 
