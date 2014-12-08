@@ -109,6 +109,9 @@ public final class DeviceConfig extends xConfig {
 	public String getDesc() {
 		return this.desc;
 	}
+	public boolean idEquals(final int id) {
+		return (this.id == id);
+	}
 
 
 
