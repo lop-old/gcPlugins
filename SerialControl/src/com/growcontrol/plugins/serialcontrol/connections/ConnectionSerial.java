@@ -27,6 +27,8 @@ import com.poixson.commonjava.xLogger.xLog;
 // 067b:2303 - Prolific Technology, Inc. PL2303 Serial Port
 public class ConnectionSerial implements Connection, SerialPortEventListener {
 
+	private static final String LINE_ENDING = ArduinoDevice.LINE_ENDING;
+
 	public static final int timeout = 500;
 
 	protected final SerialControl plugin;
@@ -78,7 +80,7 @@ public class ConnectionSerial implements Connection, SerialPortEventListener {
 		// request device id's
 		this.log().fine("Sending 'scan' packet..");
 		this.scanning = CoolDown.get("2s");
-		this.write(";\r\nscan;\r\n");
+		this.write(LINE_ENDING+"scan"+LINE_ENDING);
 	}
 	public void dispose() {
 		this.close();
@@ -131,13 +133,15 @@ public class ConnectionSerial implements Connection, SerialPortEventListener {
 		if(!this.devices.containsKey(id)) {
 			final String vers = line.substring(4);
 			this.log().stats("Found arduino device id: "+id.toString()+" version: "+vers);
-			this.devices.put(
-				id,
+			final ArduinoDevice arduino =
 				new ArduinoDevice(
 					this,
 					id.intValue(),
 					vers
-				)
+				);
+			this.devices.put(
+				id,
+				arduino
 			);
 			return;
 		}
