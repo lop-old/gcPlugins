@@ -186,6 +186,13 @@ public class ConnectionSerial implements Connection, SerialPortEventListener {
 
 
 
+	@Override
+	public SerialControl getPlugin() {
+		return this.plugin;
+	}
+
+
+
 	// logger
 	private final xLog _log;
 	@Override
