@@ -75,35 +75,37 @@ public class SerialControl extends gcServerPlugin {
 			PluginConfig.class
 		);
 		// load device configs
-		this.configs.clear();
-		final File path = new File(DIR);
-		for(final File file : path.listFiles()) {
-			if(file == null) continue;
-			final String filename = file.toString();
-			if(utils.isEmpty(filename)) continue;
-			// hidden file
-			if(filename.startsWith(".")) continue;
-			// ends with .yml
-			if(!filename.endsWith(".yml")) continue;
-			// ignore config.yml
-			if(filename.endsWith(SEP+"config.yml")) continue;
-			// load config file
-			final DeviceConfig cfg = (DeviceConfig) xConfigLoader.Load(
-				file,
-				DeviceConfig.class
-			);
-			if(cfg == null) {
-				log().severe("Failed to load config file: "+filename);
-				continue;
-			}
-			cfg.init(this);
-			this.configs.add(cfg);
-			// use defined port
-			{
-				final String portName = cfg.getComm();
-				if(utils.notEmpty(portName)) {
-					this.log().stats("Explicit port: "+portName);
-					this.openComm(portName);
+		synchronized(this.configs) {
+			this.configs.clear();
+			final File path = new File(DIR);
+			for(final File file : path.listFiles()) {
+				if(file == null) continue;
+				final String filename = file.toString();
+				if(utils.isEmpty(filename)) continue;
+				// hidden file
+				if(filename.startsWith(".")) continue;
+				// ends with .yml
+				if(!filename.endsWith(".yml")) continue;
+				// ignore config.yml
+				if(filename.endsWith(SEP+"config.yml")) continue;
+				// load config file
+				final DeviceConfig cfg = (DeviceConfig) xConfigLoader.Load(
+					file,
+					DeviceConfig.class
+				);
+				if(cfg == null) {
+					log().severe("Failed to load config file: "+filename);
+					continue;
+				}
+				cfg.init(this);
+				this.configs.add(cfg);
+				// use defined port
+				{
+					final String portName = cfg.getComm();
+					if(utils.notEmpty(portName)) {
+						this.log().stats("Explicit port: "+portName);
+						this.openComm(portName);
+					}
 				}
 			}
 		}
