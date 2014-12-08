@@ -162,6 +162,7 @@ this.log().severe("RS485 PORT FOUND - this is unfinished");
 
 
 
+	// open comm port
 	public boolean openComm(final String portName) {
 		if(utils.isEmpty(portName)) throw new NullPointerException();
 		final ConnectionSerial connection;
@@ -203,6 +204,21 @@ this.log().severe("RS485 PORT FOUND - this is unfinished");
 		synchronized(this.comms) {
 			this.comms.remove(port);
 		}
+	}
+
+
+
+	public DeviceConfig getDeviceConfig(final int id) {
+		DeviceConfig cfg = null;
+		synchronized(this.configs) {
+			for(final DeviceConfig c : this.configs) {
+				if(c.idEquals(id)) {
+					cfg = c;
+					break;
+				}
+			}
+		}
+		return cfg;
 	}
 
 
