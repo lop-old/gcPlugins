@@ -91,6 +91,18 @@ public final class DeviceConfig extends xConfig {
 
 
 
+	// clone addresses map
+	public Map<String, MetaAddress> getAddresses() {
+		final Map<String, MetaAddress> map;
+		synchronized(this.addresses) {
+			map = new HashMap<String, MetaAddress>(this.addresses.size());
+			map.putAll(this.addresses);
+		}
+		return map;
+	}
+
+
+
 	public int getId() {
 		return this.id;
 	}
